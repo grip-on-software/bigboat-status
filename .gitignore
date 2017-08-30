@@ -1,0 +1,7 @@
+bundle.js
+bundle.js.map
+node_modules
+data/
+public/data
+public/mix-manifest.json
+public/hot

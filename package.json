@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack --progress --hide-modules",
+    "watch": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules",
+    "hot": "cross-env NODE_ENV=development webpack-dev-server --inline --hot",
+    "production": "cross-env NODE_ENV=production webpack --hide-modules"
+  },
+  "devDependencies": {
+    "laravel-mix": "^0.10.0"
+  },
+  "dependencies": {
+    "axios": "^0.16.1",
+    "d3": "^4.8.0",
+    "javascript-natural-sort": "^0.7.1"
+  }
+}
