@@ -16,3 +16,10 @@ body {
     margin: 0;
 }
 
+.section.is-small {
+    padding: 1.5rem;
+}
+
+.has-text-weight-bold {
+    font-weight: bold;
+}
