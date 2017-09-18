@@ -37,3 +37,7 @@ body {
 .component svg {
     margin-top: auto;
 }
+
+.focus circle {
+    fill: rgb(0, 67, 125);
+}
