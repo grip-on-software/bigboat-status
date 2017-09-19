@@ -32,6 +32,7 @@ body {
 
 .component .description {
     font-size: 0.9em;
+    margin-bottom: 7px;
 }
 
 .component svg {
@@ -39,11 +40,24 @@ body {
 }
 
 .focus circle {
-    fill: rgb(0, 67, 125);
+    fill: #F1F3F3;
+    stroke: rgb(0, 67, 125);
+    stroke-width: 2px;
 }
 
 .focus .hover-line {
-  stroke: rgb(0, 67, 125);
-  stroke-width: 2px;
-  stroke-dasharray: 3,3;
+  stroke: #555;
+  stroke-width: 1px;
+}
+
+.domain {
+    stroke: #777;
+}
+
+.tick line {
+    stroke: #aaa;
+}
+
+.axis .tick text {
+    fill: #222;
 }
