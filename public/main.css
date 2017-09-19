@@ -24,6 +24,10 @@ body {
     font-weight: bold;
 }
 
+svg#average-reliability {
+    overflow: visible;
+}
+
 .component {
     display: flex;
     flex-direction: column;
@@ -48,6 +52,14 @@ body {
 .focus .hover-line {
   stroke: #555;
   stroke-width: 1px;
+}
+
+.focus .tooltip tspan {
+    fill: #F1F3F3;
+}
+
+.focus .tooltip rect {
+    border-radius: 20px;
 }
 
 .domain {
