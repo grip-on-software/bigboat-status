@@ -41,3 +41,9 @@ body {
 .focus circle {
     fill: rgb(0, 67, 125);
 }
+
+.focus .hover-line {
+  stroke: rgb(0, 67, 125);
+  stroke-width: 2px;
+  stroke-dasharray: 3,3;
+}
