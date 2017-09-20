@@ -12,6 +12,10 @@ body {
     padding: 1.5rem;
 }
 
+#source-url * {
+	vertical-align: middle;
+}
+
 .title.has-no-margin {
     margin: 0;
 }
