@@ -32,6 +32,10 @@ svg#average-reliability {
     overflow: visible;
 }
 
+svg .overlay {
+	outline: none;
+}
+
 .component {
     display: flex;
     flex-direction: column;
