@@ -47,6 +47,7 @@ svg#average-reliability {
     fill: #F1F3F3;
     stroke: rgb(0, 67, 125);
     stroke-width: 2px;
+    fill-opacity: .5;
 }
 
 .focus .hover-line {
