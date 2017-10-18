@@ -6,3 +6,6 @@ output/
 public/data
 public/mix-manifest.json
 public/hot
+.dockerignore
+.gitignore
+Jenkinsfile
