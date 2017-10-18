@@ -7,6 +7,7 @@ pipeline {
     }
     triggers {
         gitlab(triggerOnPush: true, triggerOnMergeRequest: true, branchFilterType: 'All')
+        cron('1,16,31,46 8-18 * * 1-5')
     }
 
     post {
