@@ -1,12 +1,16 @@
 pipeline {
     agent { label 'docker' }
 
+    environment {
+        GITLAB_TOKEN = credentials('bigboat-status-gitlab-token')
+    }
+
     options {
         gitLabConnection('gitlab')
         buildDiscarder(logRotator(numToKeepStr: '10'))
     }
     triggers {
-        gitlab(triggerOnPush: true, triggerOnMergeRequest: true, branchFilterType: 'All')
+        gitlab(triggerOnPush: true, triggerOnMergeRequest: true, branchFilterType: 'All', secretToken: env.GITLAB_TOKEN)
         cron('1,16,31,46 8-18 * * 1-5')
     }
 
@@ -17,6 +21,9 @@ pipeline {
         }
         failure {
             updateGitlabCommitStatus name: env.JOB_NAME, state: 'failed'
+        }
+        aborted {
+            updateGitlabCommitStatus name: env.JOB_NAME, state: 'canceled'
         }
     }
 
@@ -43,7 +50,7 @@ pipeline {
             }
             steps {
                 withCredentials([file(credentialsId: 'data-analysis-config', variable: 'ANALYSIS_CONFIGURATION')]) {
-                    sh '/bin/bash -c "rm -rf $PWD/output && mkdir $PWD/output && cd /home/docker && cp $ANALYSIS_CONFIGURATION config.yml && Rscript report.r --report bigboat_status --log INFO --output $PWD/output"'
+                    sh '/bin/bash -c "rm -rf $PWD/output && mkdir $PWD/output && cd /home/docker && cp $ANALYSIS_CONFIGURATION config.yml && Rscript report.r --report bigboat_status $REPORT_PARAMS --log INFO --output $PWD/output"'
                 }
             }
         }
