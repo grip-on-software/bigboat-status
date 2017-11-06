@@ -27,9 +27,18 @@ pipeline {
     }
 
     stages {
-        stage('Build') {
+        stage('Start') {
+            when {
+                expression {
+                    currentBuild.rawBuild.getCause(hudson.triggers.TimerTrigger$TimerTriggerCause) == null
+                }
+            }
             steps {
                 updateGitlabCommitStatus name: env.JOB_NAME, state: 'running'
+            }
+        }
+        stage('Build') {
+            steps {
                 sh 'docker build -t $DOCKER_REGISTRY/gros-bigboat-status .'
             }
         }
