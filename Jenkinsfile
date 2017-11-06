@@ -17,7 +17,6 @@ pipeline {
     post {
         success {
             publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'public', reportFiles: 'index.html', reportName: 'Visualization', reportTitles: ''])
-            updateGitlabCommitStatus name: env.JOB_NAME, state: 'success'
         }
         failure {
             updateGitlabCommitStatus name: env.JOB_NAME, state: 'failed'
@@ -28,9 +27,18 @@ pipeline {
     }
 
     stages {
-        stage('Build') {
+        stage('Start') {
+            when {
+                expression {
+                    currentBuild.rawBuild.getCause(hudson.triggers.TimerTrigger$TimerTriggerCause) == null
+                }
+            }
             steps {
                 updateGitlabCommitStatus name: env.JOB_NAME, state: 'running'
+            }
+        }
+        stage('Build') {
+            steps {
                 sh 'docker build -t $DOCKER_REGISTRY/gros-bigboat-status .'
             }
         }
@@ -67,6 +75,16 @@ pipeline {
                 sh 'rm -rf node_modules/'
                 sh 'ln -s /usr/src/app/node_modules .'
                 sh 'npm run production -- --context=$PWD'
+            }
+        }
+        stage('Status') {
+            when {
+                expression {
+                    currentBuild.rawBuild.getCause(hudson.triggers.TimerTrigger$TimerTriggerCause) == null
+                }
+            }
+            steps {
+                updateGitlabCommitStatus name: env.JOB_NAME, state: 'success'
             }
         }
     }
