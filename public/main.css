@@ -12,6 +12,10 @@ body {
     padding: 1.5rem;
 }
 
+.tabs ul {
+	flex-wrap: wrap;
+}
+
 #source-url * {
 	vertical-align: middle;
 }
