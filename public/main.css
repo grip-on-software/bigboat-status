@@ -86,3 +86,6 @@ svg .overlay {
 .axis .tick text {
     fill: #222;
 }
+.component .axis.y-axis-left text {
+	fill: rgb(0, 114, 178);
+}
