@@ -16,6 +16,12 @@ body {
 	flex-wrap: wrap;
 }
 
+#range {
+	position: absolute;
+	top: 3rem;
+	right: 1.5rem;
+}
+
 #source-url * {
 	vertical-align: middle;
 }
