@@ -1,11 +1,18 @@
 let mix = require('laravel-mix');
 
+Mix.paths.setRootPath(__dirname);
 mix.setPublicPath('public/')
+    .setResourceRoot('')
     .js('lib/index.js', 'public/bundle.js')
+    .sass('res/main.scss', 'public/main.css')
     .browserSync({
         proxy: false,
-        server: 'public'
-    });;
+        server: 'public',
+        files: [
+            'public/**/*.js',
+            'public/**/*.css'
+        ]
+    });
 
 // Full API
 // mix.js(src, output);
