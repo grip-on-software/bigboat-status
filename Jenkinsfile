@@ -3,6 +3,7 @@ pipeline {
 
     environment {
         GITLAB_TOKEN = credentials('bigboat-status-gitlab-token')
+        SCANNER_HOME = tool name: 'SonarQube Scanner 3', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
     }
 
     options {
@@ -40,6 +41,18 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'docker build -t $DOCKER_REGISTRY/gros-bigboat-status . --build-arg NPM_REGISTRY=$NPM_REGISTRY'
+            }
+        }
+        stage('SonarQube Analysis') {
+            when {
+                expression {
+                    currentBuild.rawBuild.getCause(hudson.triggers.TimerTrigger$TimerTriggerCause) == null
+                }
+            }
+            steps {
+                withSonarQubeEnv('SonarQube') {
+                    sh '${SCANNER_HOME}/bin/sonar-scanner -Dsonar.branch=$BRANCH_NAME'
+                }
             }
         }
         stage('Push') {
