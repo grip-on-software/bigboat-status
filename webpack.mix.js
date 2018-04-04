@@ -1,4 +1,13 @@
-let mix = require('laravel-mix');
+let fs = require('fs'),
+    mix = require('laravel-mix');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+let config = path.resolve(__dirname, 'config.json');
+if (!fs.existsSync(config)) {
+    config = path.resolve(__dirname, 'lib/config.json');
+}
+
+const configuration = JSON.parse(fs.readFileSync(config));
 
 Mix.paths.setRootPath(__dirname);
 mix.setPublicPath('public/')
@@ -12,6 +21,33 @@ mix.setPublicPath('public/')
             'public/**/*.js',
             'public/**/*.css'
         ]
+    })
+    .webpackConfig({
+        output: {
+            path: path.resolve('public/'),
+            publicPath: configuration.path
+        },
+        module: {
+            rules: [ {
+                test: /\.mustache$/,
+                loader: 'mustache-loader',
+                options: {
+                    tiny: true,
+                    render: Object.assign({}, configuration)
+                }
+            } ]
+        },
+        plugins: [
+            new HtmlWebpackPlugin({
+                template: 'template/index.mustache',
+                inject: 'body'
+            })
+        ],
+        resolve: {
+            alias: {
+                'config.json$': config
+            }
+        }
     });
 
 // Full API

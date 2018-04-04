@@ -32,6 +32,10 @@ body {
 .title.has-no-margin {
     margin: 0;
 }
+.title #source-url {
+	font-size: 80%;
+	vertical-align: top;
+}
 
 .section.is-small {
     padding: 1.5rem;
