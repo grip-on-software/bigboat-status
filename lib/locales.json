@@ -1,0 +1,78 @@
+{
+    "en": {
+        "language": "English",
+        "dateTime": "%a %b %e %X %Y",
+        "longDate": "%d %B %Y", 
+        "date": "%m/%d/%Y",
+        "time": "%H:%M:%S",
+        "periods": ["AM", "PM"],
+        "days": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "shortDays": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+        "months": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+        "shortMonths": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        "durations": {
+            "full": "Full",
+            "month": "Month",
+            "week": "Week"
+        },
+        "units": {
+            "days": "%s days",
+            "gigabytes": "%s GB"
+        },
+        "axes": {
+            "days": "Days",
+            "gigabytes": "GB"
+        },
+        "messages": {
+            "title": "BigBoat status",
+            "last-checked": "Last checked: %s",
+            "average-reliability": "Average Reliability",
+            "component-reliability": "Reliability per Component",
+            "data-error": "Could not load data: %s",
+            "projects-error": "Could not load projects: %s",
+            "ok-yes": "OK",
+            "ok-no": "Bad",
+            "status-tooltip": "%s - all OK",
+            "unit-days": "Days",
+            "unit-gigabytes": "GB"
+        }
+    },
+    "nl": {
+        "language": "Nederlands",
+        "dateTime": "%a %e %b %Y %X",
+        "longDate": "%e %B %Y",
+        "date": "%d-%m-%Y",
+        "time": "%H:%M:%S",
+        "periods": ["AM", "PM"],
+        "days": ["zondag", "maandag", "dinsdag", "woensdag", "donderdag", "vrijdag", "zaterdag"],
+        "shortDays": ["zo", "ma", "di", "wo", "do", "vr", "za"],
+        "months": ["januari", "februari", "maart", "april", "mei", "juni", "juli", "augustus", "september", "oktober", "november", "december"],
+        "shortMonths": ["jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"],
+        "durations": {
+            "full": "Alles",
+            "month": "Maand",
+            "week": "Week"
+        },
+        "units": {
+            "days": "%s dagen",
+            "gigabytes": "%s GB"
+        },
+        "axes": {
+            "days": "Dagen",
+            "gigabytes": "GB"
+        },
+        "messages": {
+            "title": "BigBoat-status",
+            "last-checked": "Laatste controle: %s",
+            "average-reliability": "Gemiddelde Betrouwbaarheid",
+            "component-reliability": "Betrouwbaarheid per Component",
+            "data-error": "Kon geen gegevens ophalen: %s",
+            "projects-error": "Kon geen projecten ophalen: %s",
+            "ok-yes": "OK",
+            "ok-no": "Fout",
+            "status-tooltip": "%s - alles OK",
+            "unit-days": "Dagen",
+            "unit-gigabytes": "GB"
+        }
+    }
+}

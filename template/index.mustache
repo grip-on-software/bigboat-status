@@ -5,13 +5,17 @@
     <title>Big Boat status</title>
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="{{ visualization_url }}navbar.css">
 </head>
 
 <body>
+    <nav class="navbar is-link" role="navigation"
+    aria-label="main navigation" id="navbar">
+    </nav>
+
     <div id="header">
         <div class="container">
-            <h1 class="title">Big Boat status</h1>
+            <h1 class="title" data-message="title">Big Boat status</h1>
         </div>
     </div>
 
@@ -29,26 +33,27 @@
         <div id="content" class="is-hidden">
             <div class="container">
                 <section class="section average">
-                    <h2 class="title"><span id="project-name">Project</span> <a id="source-url" target="_blank"><i class="fa fa-external-link"></i></a></h2>
+                    <h2 class="title"><span id="project-name">Project</span> <a id="source-url" target="_blank"><i class="fas fa-external-link-alt"></i></a></h2>
 
-                    Last checked: <span id="last-checked"></span>
+                    <span data-message="last-checked">Last checked: <span id="last-checked"></span></span>
 
                     <div id="range" class="tabs is-toggle is-small">
                     </div>
 
                     <br><br><br>
-                    <h3 class="title is-4">Average reliability</h3>
+                    <h3 class="title is-4" data-message="average-reliability">Average reliability</h3>
                     <svg width="960" height="500" id="average-reliability"></svg>
                 </section>
                 <section class="section">
-                    <h3 class="title is-4">Reliability per component</h3>
+                    <h3 class="title is-4" data-title="component-reliability">Reliability per component</h3>
                     <div id="components" class="columns is-multiline"></div>
                 </section>
             </div>
         </div>
     </div>
 
-    <script src="bundle.js"></script>
+    <script type="text/javascript" src="{{ visualization_url }}manifest.js"></script>
+    <script type="text/javascript" src="{{ visualization_url }}vendor.js"></script>
 </body>
 
 </html>
