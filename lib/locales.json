@@ -33,6 +33,7 @@
             "ok-yes": "OK",
             "ok-no": "Bad",
             "status-tooltip": "%s - all OK",
+            "status-component-tooltip": "%s - %s",
             "unit-days": "Days",
             "unit-gigabytes": "GB"
         }
@@ -71,6 +72,7 @@
             "ok-yes": "OK",
             "ok-no": "Fout",
             "status-tooltip": "%s - alles OK",
+            "status-component-tooltip": "%s - %s",
             "unit-days": "Dagen",
             "unit-gigabytes": "GB"
         }
