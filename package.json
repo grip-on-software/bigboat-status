@@ -13,28 +13,29 @@
     "instrument": false
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.2.0",
-    "babel-loader": "^8.0.4",
-    "babel-plugin-istanbul": "^5.1.0",
+    "@babel/preset-env": "^7.4.2",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-istanbul": "^5.1.1",
     "browser-sync": "^2.26.3",
     "browser-sync-webpack-plugin": "^2.2.2",
     "html-webpack-plugin": "^3.2.0",
-    "laravel-mix": "^4.0.6",
-    "mustache-loader": "^1.4.1",
-    "nyc": "^13.1.0",
-    "resolve-url-loader": "^2.3.1",
-    "sass": "^1.15.2",
-    "sass-loader": "^7.1.0"
+    "laravel-mix": "^4.0.15",
+    "mustache-loader": "^1.4.3",
+    "nyc": "^13.3.0",
+    "resolve-url-loader": "^2.3.2",
+    "sass": "^1.17.3",
+    "sass-loader": "^7.1.0",
+    "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.6.1",
-    "@gros/visualization-ui": "^0.5.0",
+    "@fortawesome/fontawesome-free": "^5.8.1",
+    "@gros/visualization-ui": "^0.5.4",
     "axios": "^0.18.0",
-    "bulma": "^0.7.2",
+    "bulma": "^0.7.4",
     "cross-env": "^5.2.0",
-    "d3": "^5.7.0",
+    "d3": "^5.9.2",
     "lodash": "^4.17.11",
-    "moment": "^2.23.0",
+    "moment": "^2.24.0",
     "sprintf-js": "^1.1.2"
   }
 }

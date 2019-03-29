@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Big Boat status</title>
+    <title data-message="title">BigBoat status</title>
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
     <link rel="stylesheet" href="{{ visualization_url }}navbar.css">
@@ -13,44 +13,46 @@
     aria-label="main navigation" id="navbar">
     </nav>
 
-    <div id="header">
-        <div class="container">
-            <h1 class="title" data-message="title">Big Boat status</h1>
-        </div>
-    </div>
-
-    <div class="container">
-        <section class="section is-small">
-            <!-- Project navigation -->
-            <div id="navigation" class="tabs is-toggle">
-            </div>
-
-            <div id="error-message" class="notification is-danger is-hidden"></div>
-        </section>
-    </div>
-
-    <div id="container">
-        <div id="content" class="is-hidden">
+    <main role="main">
+        <div id="header">
             <div class="container">
-                <section class="section average">
-                    <h2 class="title"><span id="project-name">Project</span> <a id="source-url" target="_blank"><i class="fas fa-external-link-alt"></i></a></h2>
-
-                    <span data-message="last-checked">Last checked: <span id="last-checked"></span></span>
-
-                    <div id="range" class="tabs is-toggle is-small">
-                    </div>
-
-                    <br><br><br>
-                    <h3 class="title is-4" data-message="average-reliability">Average reliability</h3>
-                    <svg width="960" height="500" id="average-reliability"></svg>
-                </section>
-                <section class="section">
-                    <h3 class="title is-4" data-title="component-reliability">Reliability per component</h3>
-                    <div id="components" class="columns is-multiline"></div>
-                </section>
+                <h1 class="title" data-message="title">BigBoat status</h1>
             </div>
         </div>
-    </div>
+
+        <div class="container">
+            <section class="section is-small">
+                <!-- Project navigation -->
+                <div id="navigation" class="tabs is-toggle">
+                </div>
+
+                <div id="error-message" class="notification is-danger is-hidden"></div>
+            </section>
+        </div>
+
+        <div id="container">
+            <div id="content" class="is-hidden">
+                <div class="container">
+                    <section class="section average">
+                        <h2 class="title"><span id="project-name">Project</span> <a id="source-url" target="_blank"><i class="fas fa-external-link-alt"></i></a></h2>
+
+                        <span class="subtitle" data-message="last-checked">Last checked: <span id="last-checked"></span></span>
+
+                        <div id="range" class="tabs is-toggle is-small">
+                        </div>
+
+                        <br><br><br>
+                        <h3 class="title is-4" data-message="average-reliability">Average reliability</h3>
+                        <svg width="960" height="500" id="average-reliability"></svg>
+                    </section>
+                    <section class="section">
+                        <h3 class="title is-4" data-title="component-reliability">Reliability per component</h3>
+                        <div id="components" class="columns is-multiline"></div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <script type="text/javascript" src="{{ visualization_url }}manifest.js"></script>
     <script type="text/javascript" src="{{ visualization_url }}vendor.js"></script>
