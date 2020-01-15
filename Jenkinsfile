@@ -49,7 +49,7 @@ pipeline {
             }
             steps {
                 withSonarQubeEnv('SonarQube') {
-                    sh '${SCANNER_HOME}/bin/sonar-scanner -Dsonar.branch=$BRANCH_NAME'
+                    sh '${SCANNER_HOME}/bin/sonar-scanner -Dsonar.projectKey=bigboat-status:$BRANCH_NAME -Dsonar.projectName="BigBoat Status $BRANCH_NAME"'
                 }
             }
         }
