@@ -103,7 +103,7 @@ pipeline {
                     sh 'mv output/ public/data/'
                     sh 'rm -rf node_modules/'
                     sh 'ln -s /usr/src/app/node_modules .'
-                    sh 'npm run production -- --env mixfile=$PWD/webpack.mix.js'
+                    sh 'MIX_FILE=$WORKSPACE/webpack.mix.js npm run production'
                 }
                 publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'public', reportFiles: 'index.html', reportName: 'Visualization', reportTitles: ''])
             }
