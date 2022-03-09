@@ -1,7 +1,7 @@
 # BigBoat platform status
 
-This visualization produces reliability graph for project ecosystems running on 
-[BigBoat](https://github.com/ICTU/docker-dashboard).
+This visualization produces reliability graphs for project ecosystems running 
+on [BigBoat](https://github.com/ICTU/docker-dashboard).
 
 ## Configuration
 
@@ -20,7 +20,7 @@ settings in that file. The following configuration items are known:
 ## Data
 
 The data for the BigBoat status can be collected, analyzed and output through 
-runs of the `data-gathering` and `data-analysis` repositories. The 
+runs of scripts from the `data-gathering` and `data-analysis` repositories. The 
 documentation for those repositories may provide more details on how to deploy 
 the collection scripts, but as a summary the gathering scripts 
 `scraper/bigboat_to_json.py` and either `controller/auth/status.py` (as part of 
@@ -35,3 +35,9 @@ and then either `npm run watch` to start a development server that also
 refreshes browsers upon code changes, or `npm run production` to create 
 a minimized bundle. The resulting HTML, CSS and JavaScript is made available in 
 the `public` directory.
+
+This repository also contains a `Dockerfile` specification for a Docker image 
+that can perform the installation of the app and dependencies, which allows 
+building the visualization within there. Also, a `Jenkinsfile` contains 
+appropriate steps for a Jenkins CI deployment, including data collection and 
+visualization building.
