@@ -70,7 +70,7 @@ pipeline {
             }
             agent {
                 docker {
-                    image '$DOCKER_REGISTRY/gros-data-analysis-dashboard'
+                    image "${env.DOCKER_REGISTRY}/gros-data-analysis-dashboard"
                     args '--tmpfs /tmp'
                     reuseNode true
                 }
@@ -92,7 +92,7 @@ pipeline {
             }
             agent {
                 docker {
-                    image '$DOCKER_REGISTRY/gros-bigboat-status:$IMAGE_TAG'
+                    image "${env.DOCKER_REGISTRY}/gros-bigboat-status:${env.IMAGE_TAG}"
                     reuseNode true
                 }
             }
