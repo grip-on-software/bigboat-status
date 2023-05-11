@@ -1,3 +1,4 @@
+*.tgz
 bundle.js
 bundle.js.*
 /config*.json
