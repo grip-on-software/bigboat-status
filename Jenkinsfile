@@ -28,8 +28,8 @@ pipeline {
     stages {
         stage('Start') {
             when {
-                expression {
-                    currentBuild.rawBuild.getCause(hudson.triggers.TimerTrigger$TimerTriggerCause) == null
+                not {
+                    triggeredBy 'TimerTrigger'
                 }
             }
             steps {
@@ -43,8 +43,8 @@ pipeline {
         }
         stage('SonarQube Analysis') {
             when {
-                expression {
-                    currentBuild.rawBuild.getCause(hudson.triggers.TimerTrigger$TimerTriggerCause) == null
+                not {
+                    triggeredBy 'TimerTrigger'
                 }
             }
             steps {
@@ -63,8 +63,8 @@ pipeline {
             when {
                 anyOf {
                     branch 'master'
-                    expression {
-                        currentBuild.rawBuild.getCause(hudson.triggers.TimerTrigger$TimerTriggerCause) == null
+                    not {
+                        triggeredBy 'TimerTrigger'
                     }
                 }
             }
@@ -85,8 +85,8 @@ pipeline {
             when {
                 anyOf {
                     branch 'master'
-                    expression {
-                        currentBuild.rawBuild.getCause(hudson.triggers.TimerTrigger$TimerTriggerCause) == null
+                    not {
+                        triggeredBy 'TimerTrigger'
                     }
                 }
             }
@@ -110,8 +110,8 @@ pipeline {
         }
         stage('Status') {
             when {
-                expression {
-                    currentBuild.rawBuild.getCause(hudson.triggers.TimerTrigger$TimerTriggerCause) == null
+                not {
+                    triggeredBy 'TimerTrigger'
                 }
             }
             steps {
